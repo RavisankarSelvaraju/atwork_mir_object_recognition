@@ -30,12 +30,12 @@ def download():
         os.system('rm %s' % (zipfile))
 
 def load_data(partition):
-    download()
+    # download()
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    DATA_DIR = os.path.join(BASE_DIR, 'data')
+    DATA_DIR = os.path.join(BASE_DIR, 'ModelNet40')
     all_data = []
     all_label = []
-    for h5_name in glob.glob(os.path.join(DATA_DIR, 'modelnet40_ply_hdf5_2048', 'ply_data_%s*.h5'%partition)):
+    for h5_name in glob.glob(os.path.join(DATA_DIR, 'ModelNet40'):
         f = h5py.File(h5_name)
         data = f['data'][:].astype('float32')
         label = f['label'][:].astype('int64')
